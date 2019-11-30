@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>task-app</title>
+</head>
+<body>
+<script>  
+   function funn()
+        {
+            if (document.forms["user_create"]["id"].value == "" )                                  
+            { 
+                window.alert("Please enter the correct ID."); 
+                window.location = '/update.html';
+                return false;
+            }
+            if (document.forms["user_create"]["name"].value == "" )                                  
+            { 
+                window.alert("Please enter your name."); 
+                window.location = '/update.html';
+                return false;
+            }
+            if (document.forms["user_create"]["email"].value == "" )                                  
+            { 
+                window.alert("Please enter your email."); 
+                window.location = '/update.html';
+                return false;
+            }
+            if ( document.forms["user_create"]["age"].value == "" )                                  
+            { 
+                window.alert("Please enter your age."); 
+                window.location = '/update.html';
+                return false;
+            }
+            if (document.forms["user_create"]["password"].value == "")                                  
+            { 
+                window.alert("Please enter your password."); 
+                window.location = '/update.html';
+                return false;
+            }
+             
+            return true;
+        }
+</script> 
+   
+   
+   <b>Enter the ID of the User to be updated:</b><br><br>
+   <br>
+    <form name="user_create" method="post" action="http://127.0.0.1:8081/users_update" onsubmit="return funn()" >
+       Enter the User ID :<input type="text" name="id"  ><br><br>
+       
+    <br><b>Enter the new data :</b>
+      <br><br>
+       <table >
+          <tr><td>Name:</td>
+           <td><input type="text"  name="name" ></td></tr>
+          <tr><td>Email:</td>
+          <td> <input type="text"  name="email"></td></tr>
+          <tr><td>Age:</td> 
+          <td><input type="Number"  name="age"></td></tr>
+          <tr><td>Password:</td>
+          <td> <input type="password" name="password"></td></tr>
+      <tr><td colspan="2"><input type="submit" id="update"  ></td></tr>
+       </table>
+    </form>
+    </body>
+</html>

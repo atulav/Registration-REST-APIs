@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>task-app</title>
+</head>
+<body>
+    <script>
+    function fun(){
+        var go = "http://127.0.0.1:8081/users/" + document.getElementsByName("id")[0].value;
+        var abc = document.getElementById('abc');
+        abc.action = go ;
+    }
+    </script>
+    <script>
+        function funn()
+        {
+            if (document.forms["user_create"]["name"].value == "" )                                  
+            { 
+                window.alert("Please enter your name."); 
+                window.location = '/index.html';
+//                die();
+                return false;
+            }
+            if (document.forms["user_create"]["email"].value == "" )                                  
+            { 
+                window.alert("Please enter your email."); 
+                window.location = '/index.html';
+//                die();
+                return false;
+            }
+            if ( document.forms["user_create"]["age"].value == "" )                                  
+            { 
+                window.alert("Please enter your age."); 
+                window.location = '/index.html';
+//                die();
+                return false;
+            }
+            if (document.forms["user_create"]["password"].value == "")                                  
+            { 
+                window.alert("Please enter your password."); 
+                window.location = '/index.html';
+//                die();
+                return false;
+            }
+             
+            return true;
+        }
+        
+    </script>
+    <script>
+    function fun1(){
+        var go = "http://127.0.0.1:8081/users_delete/" + document.getElementsByName("id1")[0].value;
+        var abcd = document.getElementById('abcd');
+        abcd.action = go ;
+    }
+    </script>
+    
+    
+    
+    
+    
+    
+    
+    
+    <b>Entering details of a user :</b><br><br>
+    <form id="xyzz" name="user_create" action="http://127.0.0.1:8081/users" method="post" onsubmit="return funn()"  >
+      <table >
+          <tr><td>Name:</td>
+           <td><input type="text"  name="name" ></td></tr>
+          <tr><td>Email:</td>
+          <td> <input type="text"  name="email"></td></tr>
+          <tr><td>Age:</td> 
+          <td><input type="Number"  name="age"></td></tr>
+          <tr><td>Password:</td>
+          <td> <input type="password" name="password"></td></tr>
+      <tr><td colspan="2"><input type="submit" id="submit"  ></td></tr>
+       </table>
+    </form>
+    
+    
+    
+    
+    
+    
+    <br><br>
+    <b>Update details of a user :</b>
+    <a href="update.html"><button type="text"  name="name">Update User</button></a>
+    
+    
+    
+    
+    
+    
+<!--
+    
+    <br><br>
+    <b>Read details of all the users :</b>
+    <form method="get" action="http://127.0.0.1:8081/users">
+        <input type="submit"  value="Read All Users">
+    </form>
+
+   
+-->
+   
+   
+   
+   
+    <br><br>
+    <b>Read details of a particular user :</b><br>
+    <form id = "abc" onsubmit="fun()">
+    Enter the User ID :<input type="text" name="id"  >
+    <input type="submit" value="Search">
+    </form>
+    
+    
+    
+    
+    
+    <br><br>
+    <b>Deleting a user :</b><br>
+    <form id = "abcd" onsubmit="fun1()">
+    Enter the User ID :<input type="text" name="id1"  >
+    <input type="submit" value="Delete">
+    </form>
+
+        
+</body>
+</html>

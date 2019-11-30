@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User Created</title>
+</head>
+<body>
+    <br>
+      <br>
+      <br><h1 align="center">
+    <br>
+    <br>
+    <br>
+       <b>
+        User Successfully created !!!
+        </b>
+    </h1>
+</body>
+</html>
+
+
+///////////////////////////////////////////
+////////Reading all Users///////////////////
+app.get('/users',(req,res) =>{
+  User.find({}).then((users) => {
+    //const cursor = users.find({});
+
+    res.send(users.)
+  }).catch((error) => {
+    res.status(404).send()
+  })
+})
